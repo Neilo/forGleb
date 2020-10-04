@@ -20,7 +20,6 @@ func main() {
 	go hello(channel)
 	go func() {
 		time.Sleep(time.Duration(rand.Intn(10)) * time.Second)
-		//wg.Wait()
 		close(channel)
 	}()
 
