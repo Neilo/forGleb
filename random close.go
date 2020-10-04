@@ -14,7 +14,6 @@ func hello(ch chan string) {
 }
 
 func main() {
-	//var wg sync.WaitGroup
 	channel := make(chan string)
 	rand.Seed(time.Now().UTC().UnixNano())
 	go hello(channel)
