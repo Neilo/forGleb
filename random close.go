@@ -11,10 +11,10 @@ func hello(ch chan string) {
 		time.Sleep(time.Second)
 		fmt.Println("Привет")
 	}
-	ch <- "Хеллов"
 }
 
 func main() {
+	//var wg sync.WaitGroup
 	channel := make(chan string)
 	rand.Seed(time.Now().UTC().UnixNano())
 	go hello(channel)
