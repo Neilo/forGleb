@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func hello(ch chan string) {
+func hello() {
 	for {
 		time.Sleep(time.Second)
 		fmt.Println("Привет")
@@ -16,7 +16,7 @@ func hello(ch chan string) {
 func main() {
 	channel := make(chan string)
 	rand.Seed(time.Now().UTC().UnixNano())
-	go hello(channel)
+	go hello()
 	go func() {
 		time.Sleep(time.Duration(rand.Intn(10)) * time.Second)
 		close(channel)
